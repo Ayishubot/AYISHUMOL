@@ -1,17 +1,17 @@
-## Thanks for Everything
-### We will always remember you..
+## AF TROLLS & YOUTUBE &INSTAGRAM
+### AYISHUMOL BOT CREATED BY FASIL
 
 <div align="center">
-  <img border-radius: 15px src="https://i.imgur.com/zdcqaaG.jpeg" width="200" height="200"/>
+  <img border-radius: 15px src="https://i.imgur.com/d4DIca6.jpeg" width="200" height="200"/>
   <p align="center">
-<a href="#"><img title="PinkyMwol" src="https://img.shields.io/badge/afnanplk-pink?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="ᴀʏɪꜱʜᴜᴍᴏʟ" src="https://img.shields.io/badge/Ayishubot-pink?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
   <p align="center">
-<a href="https://chat.whatsapp.com/Eq2IZ59kFaBEp8M8Y3Nrqd"><img title="join support" src="https://img.shields.io/badge/join_support-afnanplk/pinkymwol?color=black&style=for-the-badge&logo=whatsapp"></a>
+<a href="https://chat.whatsapp.com/HA40jOppDy9Cj5r4dUPxUv"><img title="join support" src="https://img.shields.io/badge/join_support-Ayishubot/AYISHUMOL?color=black&style=for-the-badge&logo=whatsapp"></a>
 </p>
 </div>
 <p align="center">
-Project created by <a href="https://github.com/afnanplk">afnanplk</a> to make it public
+Project created by <a href="https://github.com/Ayishubot">AYISHUMOL</a> to make it public
     <br>
        | © |
         Reserved |
@@ -21,18 +21,18 @@ Project created by <a href="https://github.com/afnanplk">afnanplk</a> to make it
 ----
 
   <p align="center">
-  <a href="https://github.com/afnanplk/pinkymwol ">
-    <img src="https://img.shields.io/github/repo-size/afnanplk/lastpink?color=green&label=Repo%20total%20size&style=plastic">
+  <a href="https://github.com/Ayishubot/AYISHUMOL ">
+    <img src="https://img.shields.io/github/repo-size/Ayishubot/AYISHUMOL?color=green&label=Repo%20total%20size&style=plastic">
 <p align="center">
-<a href="https://github.com/afnanplk/followers"><img title="Followers" src="https://img.shields.io/github/followers/afnanplk?color=red&style=flat-circle"></a>
-<a href="https://github.com/afnanplk/lastpink/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/afnanplk/lastpink?color=red&style=flat-square"></a>
-<a href="https://github.com/afnanplk/lastpink/network/members"><img title="Forks" src="https://img.shields.io/github/forks/afnanplk/lastpink?color=red&style=flat-square"></a>
-<a href="https://github.com/afnanplk/lastpink/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/afnanplk/lastpink?label=Watchers&color=red&style=flat-square"></a>
+<a href="https://github.com/Ayishubot/followers"><img title="Followers" src="https://img.shields.io/github/followers/Ayishubot?color=red&style=flat-circle"></a>
+<a href="https://github.com/Ayishubot/lastpink/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Ayishubot/lastpink?color=red&style=flat-square"></a>
+<a href="https://github.com/Ayishubot/lastpink/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Ayishubot/lastpink?color=red&style=flat-square"></a>
+<a href="https://github.com/Ayishubot/lastpink/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Ayishubot/lastpink?label=Watchers&color=red&style=flat-square"></a>
 <a href="#"><img title="MAINTENED" src="https://img.shields.io/badge/UNMAINTENED-YES-blue.svg"</a>
 
 ```
   
-pinky - pinky Userbot is Open Source software open to development. 
+Ayishumol - Ayishumol Userbot is Open Source software open to development. 
 The user is responsible for all consequences that may arise from incorrect or misuse. 
 Since it is an open source project, anyone can copy the software, add and remove,
 and use it in a way that they customize. In addition, plug-in support enables users to 
@@ -53,9 +53,9 @@ the user is responsible.
 
   ### Simple Method
   
-[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@afnanplk/PinkyMwol-QR)
+[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://replit.com/@Ayishubot/AyishumolMwol-QR)
  
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://gist.github.com/afnanplk/f34ed6b03429ba67d46c709f841f69f4)   
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://gist.github.com/Ayishubot/f34ed6b03429ba67d46c709f841f69f4)   
  
   </div>
  
@@ -94,9 +94,9 @@ By establishing the Asena, you are deemed to have accepted these responsibilitie
 ## Developers
   <div align="center">
     
-  [![Farhan-Dqz](https://github.com/farhan-dqz.png?size=100)](https://github.com/farhan-dqz) |  [![TOXIC4L!3N](https://github.com/Alien-alfa.png?size=100)](https://github.com/AI-VIKI) | [![afnanplk](https://github.com/afnanplk.png?size=100)](https://github.com/afnanplk) 
+  [![Farhan-Dqz](https://github.com/farhan-dqz.png?size=100)](https://github.com/farhan-dqz) |  [![TOXIC4L!3N](https://github.com/Alien-alfa.png?size=100)](https://github.com/AI-VIKI) | [![Ayishubot](https://github.com/Ayishubot.png?size=100)](https://github.com/Ayishubot) 
 ----|----|----
-[farhan-dqz](https://github.com/farhan-dqz)  | [TOXIC4L!3N](https://github.com/AI-VIKI) | [afnanplk](https://github.com/afnanplk)
+[farhan-dqz](https://github.com/farhan-dqz)  | [TOXIC4L!3N](https://github.com/AI-VIKI) | [Ayishubot](https://github.com/Ayishubot)
 Base, Bug Fixes, Modules | Modifiying  as   public | Bug Fixes, Modules
   </div>
 
