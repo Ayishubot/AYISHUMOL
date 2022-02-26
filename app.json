@@ -1,9 +1,9 @@
 {
-    "name": "PINKY BY AFNAN PLK",
-    "description": "pinky bot - re-edited from asena. World’s first UserBot made for WhatsApp.",
-    "logo": "https://i.imgur.com/zdcqaaG.jpeg",
+    "name": "ᴀʏɪꜱʜᴜᴍᴏʟ BY ꜰᴀꜱɪʟ",
+    "description": "ᴀʏɪꜱʜᴜᴍᴏʟ - re-edited from asena. World’s first UserBot made for WhatsApp.",
+    "logo": "https://i.imgur.com/d4DIca6.jpeg",
     "keywords": ["whatsapp", "userbot", "Asena", "WhatsAsena", "bot", "api", "ai"],
-    "repository": "https://github.com/afnanplk/Pinky_V2",
+    "repository": "https://github.com/Ayishubot/AYISHUMOL",
     "website":   "under maintenance",
     "success_url": "under maintenance",
     "stack": "container",
@@ -78,7 +78,7 @@
          "BOT_NAME": {
             "description": "heading for .list command reply",
             "required": false,
-            "value": "•━━━╼⤏PINKY BOT⤎╾━━━•"
+            "value": "•━━━╼⤏ᴀʏɪꜱʜᴜᴍᴏʟ⤎╾━━━•"
         },      
         "HEROKU_API_KEY": {
             "description": "Herokuda API Keyiniz. Heroku API Key.",
