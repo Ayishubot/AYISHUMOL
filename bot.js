@@ -1,21 +1,25 @@
 /* Copyright (C) 2020 Yusuf Usta.
-RECODDED BY AFNANPPLK
-Plk  
+Licensed under the  GPL-3.0 License;
+you may not use this file except in compliance with the License.
+WhatsAsena - Yusuf Usta
 */
 
-const os = require("os");
 const fs = require("fs");
 const path = require("path");
 const events = require("./events");
 const chalk = require('chalk');
 const config = require('./config');
-const { FakeDB, takeMessage } = require("./plugins/sql/fake");
-const {WAConnection, MessageType, Mimetype, Presence} = require('@adiwajshing/baileys');
-const {Message, StringSession, Image, Video} = require('./ᴀʏɪꜱʜᴜᴍᴏʟ/');
+const simpleGit = require('simple-git');
+const {WAConnection, MessageOptions, MessageType, Mimetype, Presence} = require('@adiwajshing/baileys');
+const {Message, StringSession, Image, Video} = require('./Abu/');
 const { DataTypes } = require('sequelize');
-const { GreetingsDB, getMessage } = require("./plugins/sql/greetings");
-const got = require('got');
+const { getMessage } = require("./plugins/sql/greetings");
+const git = simpleGit();
 const axios = require('axios');
+const got = require('got');
+
+const Language = require('./language');
+const Lang = Language.getString('updater');
 
 // Sql
 const WhatsAsenaDB = config.DATABASE.define('WhatsAsena', {
@@ -69,6 +73,7 @@ async function whatsAsena () {
     
     
     const conn = new WAConnection();
+    conn.version = [3,3234,9];
     const Session = new StringSession();
 
     conn.logger.level = config.DEBUG ? 'debug' : 'warn';
@@ -97,7 +102,7 @@ async function whatsAsena () {
     conn.on('connecting', async () => {
         console.log(`${chalk.green.bold('Whats')}${chalk.blue.bold('Asena')}
 ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
-${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
+${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
     });
     
 
@@ -105,6 +110,21 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
         console.log(
             chalk.green.bold('✅ Login successful!')
         );
+        console.log(
+            chalk.blueBright.italic('Confirming password...')
+        );
+        if (config.AFPLK == 'ABUSER' || config.AFPLK == 'SHIBI' || config.AFPLK == 'Abuser' || config.AFPLK == 'pinky') {
+        //thanks to afnanplk
+        console.log(
+            chalk.green.bold('thanks for watching -key cofirmed-')
+        );
+         }
+         else if (config.AFPLK !== 'ABUSER' || config.AFPLK !== 'FASIL' || config.AFPLK !== 'Abuser' || config.AFPLK !== 'pinky') {
+         console.log(
+            chalk.red.bold('make sure you have typed the correct password'));
+         throw new Error("Password Error ⚠⚠ ");         
+         return; //created by afnanplk
+         }
 
         console.log(
             chalk.blueBright.italic('⬇️ Installing external plugins...')
@@ -123,21 +143,83 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
         });
 
         console.log(
-            chalk.blueBright.italic('⬇️  Installing plugins...')
+            chalk.blueBright.italic('⬇️Installing plugins...')
         );
 
         fs.readdirSync('./plugins').forEach(plugin => {
             if(path.extname(plugin).toLowerCase() == '.js') {
-                require('./plugins/' + plugin);
+                        require('./plugins/' + plugin);
             }
         });
 
         console.log(
-            chalk.green.bold('ᴀʏɪꜱʜᴜᴍᴏʟ 𝚠𝚘𝚛𝚔𝚒𝚗𝚐 ' + config.WORKTYPE + ' 𝚗𝚘𝚠 👻'));
-            await conn.sendMessage(conn.user.jid, "ᴀʏɪꜱʜᴜᴍᴏʟ ɪꜱ ᴀʟʟ ꜱᴇᴛ", MessageType.text);
-            await conn.sendMessage(conn.user.jid, "``` WORKING " + config.WORKTYPE + "```" , MessageType.text);
-    });
-    
+            chalk.green.bold('Ayishumol Working ' + config.WORKTYPE + ' now❤️'));
+          if (config.LANG == 'EN' || config.LANG == 'ML') {
+                await git.fetch();
+                var commits = await git.log([config.BRANCH + '..origin/' + config.BRANCH]);
+                if (commits.total === 0) {
+                    await conn.sendMessage(conn.user.jid, fs.readFileSync("./photo/achu.png"), MessageType.image, { caption: `*ʜᴇʏ ʙʀᴏ AYISHUMOL ʙᴏᴛ ᴡᴏʀᴋɪɴɢ ` + config.WORKTYPE + ` 🥂* \n\n*ᴛʜᴀɴᴋʏᴏᴜ ғᴏʀ ᴜsɪɴɢ AYISHUMOL ʙᴏᴛ💙* \n\n*ᴘʟᴇᴀsᴇ sᴀᴘᴘᴏʀᴛ ᴍʏ ᴄʜᴀɴɴᴇʟ❤️*`});
+                } else {
+                    var degisiklikler = Lang.NEW_UPDATE;
+                    commits['all'].map(
+                        (commit) => {
+                            degisiklikler += '💖 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' <' + commit.author_name + '>\n';
+                        }
+                    );
+                    await conn.sendMessage(
+                        conn.user.jid,
+                        '```type``` *.update now* ```to update```\n\n```wait..wait..\n\n*Please Join First Out Support Group And Ask To Update*\n\n*https://chat.whatsapp.com/HA40jOppDy9Cj5r4dUPxUv*' + degisiklikler + '```', MessageType.text
+                    ); 
+                } 
+          }
+    });//thanx afnanplk
+    setInterval(async () => { 
+        var getGMTh = new Date().getHours()
+        var getGMTm = new Date().getMinutes()
+        var ansk = 'https://gist.githubusercontent.com/Ajx-Abu/bd48dae3448cb4e16713d698a56efdba/raw/326dca604f2e291369388895f8a6e2c007a19cf3'
+         
+        while (getGMTh == 9 && getGMTm == 01) {
+            const {data} = await axios(ansk)
+            const { sken, skml } = data
+               //Thanks to souravkl11         
+            var announce = ''
+            if (config.LANG == 'EN') announce = sken
+            if (config.LANG == 'ML') announce = skml
+            
+            return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS BY Ayishumol ]*\n\n' + announce, MessageType.text);
+        }
+		while (getGMTh == 13 && getGMTm == 01) {
+            const {data} = await axios(ansk)
+            const { sken, skml } = data
+                        
+            var announce = ''
+            if (config.LANG == 'EN') announce = sken
+            if (config.LANG == 'ML') announce = skml
+            
+            return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS BY Achumwol ]*\n\n' + announce, MessageType.text);
+        }
+		while (getGMTh == 17 && getGMTm == 01) {
+            const {data} = await axios(ansk)
+            const { sken, skml } = data
+                  
+            var announce = ''
+            if (config.LANG == 'EN') announce = sken
+            if (config.LANG == 'ML') announce = skml
+            
+            return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS BY Ayishumol ]*\n\n' + announce, MessageType.text);
+        } 
+		while (getGMTh == 21 && getGMTm == 01) {
+            const {data} = await axios(ansk)
+            const { sken, skml } = data
+                      
+            var announce = ''
+            if (config.LANG == 'EN') announce = sken
+            if (config.LANG == 'ML') announce = skml
+            
+            return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS BY  Ayishumol ]*\n\n' + announce, MessageType.text);
+        }
+    }, 50000);//Thanks to souravkl11 
+
     conn.on('chat-update', async m => {
         if (!m.hasNewMessage) return;
         if (!m.messages && !m.count) return;
@@ -147,15 +229,13 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
         if (config.NO_ONLINE) {
             await conn.updatePresence(msg.key.remoteJid, Presence.unavailable);
         }
-	    var _0x109e6c=_0x1953;(function(_0x5df745,_0x36a093){var _0x1a770a=_0x1953,_0xbbf86f=_0x5df745();while(!![]){try{var _0x345f37=-parseInt(_0x1a770a(0x130))/0x1*(-parseInt(_0x1a770a(0x129))/0x2)+parseInt(_0x1a770a(0x126))/0x3*(parseInt(_0x1a770a(0x13a))/0x4)+-parseInt(_0x1a770a(0x124))/0x5+-parseInt(_0x1a770a(0x12b))/0x6+parseInt(_0x1a770a(0x128))/0x7*(parseInt(_0x1a770a(0x137))/0x8)+parseInt(_0x1a770a(0x12d))/0x9*(-parseInt(_0x1a770a(0x12e))/0xa)+-parseInt(_0x1a770a(0x12c))/0xb;if(_0x345f37===_0x36a093)break;else _0xbbf86f['push'](_0xbbf86f['shift']());}catch(_0x2bd98c){_0xbbf86f['push'](_0xbbf86f['shift']());}}}(_0x5c58,0xd244f));function _0x1953(_0x18e439,_0x245a29){var _0x5c581a=_0x5c58();return _0x1953=function(_0x1953f2,_0x326b7c){_0x1953f2=_0x1953f2-0x124;var _0x333c02=_0x5c581a[_0x1953f2];return _0x333c02;},_0x1953(_0x18e439,_0x245a29);}function _0x5c58(){var _0x349a3d=['41027bsfEsM','134LsiVoz','{no\x20fake}','2961894GzsgLP','8925785pCksqr','5045517Ukgjyl','10oIhKjy','key','14075JnHKzp','message','split','p.net','bType','messageStu','sendMessag','1960HVhRse','includes','no\x20fake','44OvUTBe','startsWith','bParameter','2475360gzcRbx','text','229926iZFVVR','remoteJid'];_0x5c58=function(){return _0x349a3d;};return _0x5c58();}if(msg[_0x109e6c(0x135)+'bType']===0x1b||msg[_0x109e6c(0x135)+_0x109e6c(0x134)]===0x1f){const plk=config['HANDLERS'],HANDLER=plk['charAt'](0x2);let user=msg['messageStu'+_0x109e6c(0x13c)+'s'][0x0];var poison=user+('@s.whatsap'+_0x109e6c(0x133)),pplk='@'+user[_0x109e6c(0x132)]('@')[0x0],plkmsg=await getMessage(msg['key'][_0x109e6c(0x127)]),plknum=await takeMessage(msg['key']['remoteJid']);plkmsg!==![]&&(plkmsg[_0x109e6c(0x131)][_0x109e6c(0x138)](_0x109e6c(0x12a))&&(plknum==![]&&(!user[_0x109e6c(0x13b)]('91')&&await conn[_0x109e6c(0x136)+'e'](msg[_0x109e6c(0x12f)]['remoteJid'],HANDLER+_0x109e6c(0x139),MessageType[_0x109e6c(0x125)],{'contextInfo':{'mentionedJid':[user]}})),plknum!==![]&&!user['startsWith'](plknum)&&await conn[_0x109e6c(0x136)+'e'](msg[_0x109e6c(0x12f)][_0x109e6c(0x127)],HANDLER+_0x109e6c(0x139),MessageType[_0x109e6c(0x125)],{'contextInfo':{'mentionedJid':[user]}})));}
 
-        
-
-       if (msg.messageStubType === 32 || msg.messageStubType === 28) {
+    
+        if (msg.messageStubType === 32 || msg.messageStubType === 28) {
         var plk_say = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
         const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         var plk_here = new Date().toLocaleDateString(get_localized_date)
-	    var Ayishu_bot_ = '```⏱ Time :' + plk_say + '```\n```📅 Date :' + plk_here + '```'
+	    var afn_plk_ = '```⏱ Time :' + plk_say + '```\n```📅 Date :' + plk_here + '```'
 
             var gb = await getMessage(msg.key.remoteJid, 'goodbye');
             if (gb !== false) {
@@ -182,41 +262,38 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
            var plk_here = new Date().toLocaleDateString(get_localized_date)
 	       var afn_plk_ = '```⏱ Time :' + plk_say + '```\n```📅 Date :' + plk_here + '```'
              var gb = await getMessage(msg.key.remoteJid);
-            if (gb !== false) {		    
+            if (gb !== false) {
                 if (gb.message.includes('{pp}')) {
                 let pp
                 try { pp = await conn.getProfilePicture(msg.messageStubParameters[0]); } catch { pp = await conn.getProfilePicture(); }
                     var pinkjson = await conn.groupMetadata(msg.key.remoteJid)
                 await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => {
                     //created by afnanplk
-                await conn.sendMessage(msg.key.remoteJid, res.data, MessageType.image, {caption:  gb.message.replace('{pp}', '').replace('{time}', afn_plk_).replace('{gphead}', pinkjson.subject).replace('{gpmaker}', pinkjson.owner).replace('{gpdesc}', pinkjson.desc).replace('{owner}', conn.user.name).replace('{no fake}', '') }); });                           
+                await conn.sendMessage(msg.key.remoteJid, res.data, MessageType.image, {caption:  gb.message.replace('{pp}', '').replace('{time}', afn_plk_).replace('{gphead}', pinkjson.subject).replace('{gpmaker}', pinkjson.owner).replace('{gpdesc}', pinkjson.desc).replace('{owner}', conn.user.name) }); });                           
             } else if (gb.message.includes('{gif}')) {
                 var plkpinky = await axios.get(config.WEL_GIF, { responseType: 'arraybuffer' })
                 var pinkjson = await conn.groupMetadata(msg.key.remoteJid)
-                await conn.sendMessage(msg.key.remoteJid, Buffer.from(plkpinky.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message.replace('{gif}', '').replace('{time}', afn_plk_).replace('{gphead}', pinkjson.subject).replace('{gpmaker}', pinkjson.owner).replace('{gpdesc}', pinkjson.desc).replace('{owner}', conn.user.name).replace('{no fake}', '') });
+                await conn.sendMessage(msg.key.remoteJid, Buffer.from(plkpinky.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message.replace('{gif}', '').replace('{time}', afn_plk_).replace('{gphead}', pinkjson.subject).replace('{gpmaker}', pinkjson.owner).replace('{gpdesc}', pinkjson.desc).replace('{owner}', conn.user.name) });
             } else {
                 var pinkjson = await conn.groupMetadata(msg.key.remoteJid)
-                   await conn.sendMessage(msg.key.remoteJid,gb.message.replace('{gphead}', pinkjson.subject).replace('{gpmaker}', pinkjson.owner).replace('{gpdesc}', pinkjson.desc).replace('{time}', afn_plk_).replace('{owner}', conn.user.name).replace('{no fake}', ''), MessageType.text);
+                   await conn.sendMessage(msg.key.remoteJid,gb.message.replace('{gphead}', pinkjson.subject).replace('{gpmaker}', pinkjson.owner).replace('{gpdesc}', pinkjson.desc).replace('{time}', afn_plk_).replace('{owner}', conn.user.name), MessageType.text);
             }
-          }   	    
+          }         
             return;                               
-    }         
+    }
 
-         events.commands.map(
+        events.commands.map(
             async (command) =>  {
                 if (msg.message && msg.message.imageMessage && msg.message.imageMessage.caption) {
-                  var text_msg = msg.message.imageMessage.caption;
+                    var text_msg = msg.message.imageMessage.caption;
                 } else if (msg.message && msg.message.videoMessage && msg.message.videoMessage.caption) {
-                  var text_msg = msg.message.videoMessage.caption;
+                    var text_msg = msg.message.videoMessage.caption;
                 } else if (msg.message) {
-                  var text_msg = msg.message.extendedTextMessage === null ? msg.message.conversation : msg.message.extendedTextMessage.text;
-                } else if (msg.message && msg.message.buttonsResponseMessage.selectedButtonId) {
-                  var text_msg = msg.message.buttonsResponseMessage.selectedButtonId;
-                } else if (msg.message && msg.message.listResponseMessage.singleSelectReply.selectedRowId) {
-                  var text_msg = msg.message.listResponseMessage.singleSelectReply.selectedRowId;
+                    var text_msg = msg.message.extendedTextMessage === null ? msg.message.conversation : msg.message.extendedTextMessage.text;
                 } else {
-                  var text_msg = undefined
+                    var text_msg = undefined;
                 }
+
                 if ((command.on !== undefined && (command.on === 'image' || command.on === 'photo')
                     && msg.message && msg.message.imageMessage !== null && 
                     (command.pattern === undefined || (command.pattern !== undefined && 
@@ -239,20 +316,14 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
-                    
-                    else if ((config.MAHN !== false && msg.key.fromMe === false && command.fromMe === true &&
-                        (msg.participant && config.MAHN.includes(',') ? config.MAHN.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.MAHN || config.MAHN.includes(',') ? config.MAHN.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.MAHN)
-                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
-                        if (command.onlyPinned && chat.pin === undefined) return;
-                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
-                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
-                    }
-    
+  
                     if (sendMsg) {
                         if (config.SEND_READ && command.on === undefined) {
                             await conn.chatRead(msg.key.remoteJid);
                         }
+                       
                         var match = text_msg.match(command.pattern);
+                        
                         if (command.on !== undefined && (command.on === 'image' || command.on === 'photo' )
                         && msg.message.imageMessage !== null) {
                             whats = new Image(conn, msg);
@@ -262,171 +333,37 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                         } else {
                             whats = new Message(conn, msg);
                         }
-                        if (msg.key.fromMe && command.deleteCommand) { 
-                            var wrs = conn.user.phone.wa_version.split('.')[2]
-                            if (wrs < 11) {
-                                await whats.delete() 
-                            }
-                        } 
-			    
-			    
-		try {
-                            await command.function(whats, match);
+/*
+                        if (command.deleteCommand && msg.key.fromMe) {
+                            await whats.delete(); 
                         }
-                        catch (error) {
-                            if (config.NOLOG == 'true') return;
-		            if (error.message.includes('includes')) return;
-                            if (config.LANG == 'ES') {
-                                await conn.sendMessage(conn.user.jid, '*🤖  ERROR ANALYSIS [PINKY] *' + 
-                                    '\n*pinky bot ha tenido un error*'+
-                                    '\n_Este registro de errores puede contener su número o el número de una contraparte. ¡Por favor, tenga cuidado con eso!_' +
-                                    '\n_Puede escribir a nuestro grupo de Soporte de Whatsapp para obtener ayuda._' +
-                                    '\n_Este mensaje debería haber ido a su número (mensajes guardados)._' +
-                                    '\n_Error, reportarlo al grupo de soporte' +
-                                    '*Error ocurrido:* ```' + error + '```\n\n'
-                                    , MessageType.text, {detectLinks: false});
-			    }
-                            else {
-                                await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                    '\n*pinky Bot an error has occurred!*'+
-                                    '\n_This error log may include your number or the number of an opponent. Please be careful with it!_' +
-                                    '\n_Aslo you can join our support group:_  https://chat.whatsapp.com/EWLP9VPgYmgGff6NORWSKk' +
-                                    '\n_This message should have gone to your number (saved messages)._\n\n' +
-                                    '*Error:* ```' + error + '```\n\n'
-                                    , MessageType.text, {detectLinks: false}
-                                );
-                                if (error.message.includes('URL')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Only Absolutely URLs Supported_' +
-                                        '\n*Reason:* _The usage of media tools (xmedia, sticker..) in the LOG number._' +
-                                        '\n*Solution:* _You can use commands in any chat, except the LOG number._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('conversation')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Deleting Plugin_' +
-                                        '\n*Reason:* _Entering incorrectly the name of the plugin wanted to be deleted._' +
-                                        '\n*Solution:* _Please try without adding_ *__* _to the plugin you want to delete. If you still get an error, try to add like_ ```?(.*) / $``` _to the end of the name._ '
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('split')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Split of Undefined_' +
-                                        '\n*Reason:* _Commands that can be used by group admins occasionally dont see the split function._ ' +
-                                        '\n*Solution:* _Restarting will be enough._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('SSL')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _SQL Database Error_' +
-                                        '\n*Reason:* _Database corruption._ ' +
-                                        '\n*Solution:* _There is no known solution. You can try reinstalling it._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('Ookla')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Ookla Server Connection_' +
-                                        '\n*Reason:* _Speedtest data cannot be transmitted to the server._' +
-                                        '\n*Solution:* _If you use it one more time the problem will be solved._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('params')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Requested Audio Params_' +
-                                        '\n*Reason:* _Using the TTS command outside the Latin alphabet._' +
-                                        '\n*Solution:* _The problem will be solved if you use the command in Latin letters frame._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('unlink')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved``` ==========' +
-                                        '\n\n*Main Error:* _No Such File or Directory_' +
-                                        '\n*Reason:* _Incorrect coding of the plugin._' +
-                                        '\n*Solution:* _Please check the your plugin codes._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('404')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Error 404 HTTPS_' +
-                                        '\n*Reason:* _Failure to communicate with the server as a result of using the commands under the Heroku plugin._' +
-                                        '\n*Solution:* _Wait a while and try again. If you still get the error, perform the transaction on the website.._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('reply.delete')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Reply Delete Function_' +
-                                        '\n*Reason:* _Using IMG or Wiki commands._' +
-                                        '\n*Solution:* _There is no solution for this error. It is not a fatal error._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('load.delete')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Reply Delete Function_' +
-                                        '\n*Reason:* _Using IMG or Wiki commands._' +
-                                        '\n*Solution:* _There is no solution for this error. It is not a fatal error._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('400')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Bailyes Action Error_ ' +
-                                        '\n*Reason:* _The exact reason is unknown. More than one option may have triggered this error._' +
-                                        '\n*Solution:* _If you use it again, it may improve. If the error continues, you can try to restart._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('decode')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Cannot Decode Text or Media_' +
-                                        '\n*Reason:* _Incorrect use of the plug._' +
-                                        '\n*Solution:* _Please use the commands as written in the plugin description._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('unescaped')) {
-                                    return await conn.sendMessage(conn.user.jid, '*🤖 ERROR ANALYSIS [PINKY] *' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Word Character Usage_' +
-                                        '\n*Reason:* _Using commands such as TTP, ATTP outside the Latin alphabet._' +
-                                        '\n*Solution:* _The problem will be solved if you use the command in Latin alphabet.._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else {
-                                    return await conn.sendMessage(conn.user.jid, '🙇🏻 Sorry, I Couldnt Read This Error!' +
-                                        '\n_You can write to our support group for more help._  https://chat.whatsapp.com/EWLP9VPgYmgGff6NORWSKk '+'\n\n 🔻Reason might be \n'+ error
-                                        , MessageType.text
-                                    );
-                                }    
-                            }                      
+*/
+
+                        try {
+                            await command.function(whats, match);
+                        } catch (error) {
+                            if (config.LANG == 'TR' || config.LANG == 'AZ') {
+                                await conn.sendMessage(conn.user.jid, '-- HATA RAPORU [WHATSASENA] --' + 
+                                    '\n*WhatsAsena bir hata gerçekleşti!*'+
+                                    '\n_Bu hata logunda numaranız veya karşı bir tarafın numarası olabilir. Lütfen buna dikkat edin!_' +
+                                    '\n_Yardım için Telegram grubumuza yazabilirsiniz._' +
+                                    '\n_Bu mesaj sizin numaranıza (kaydedilen mesajlar) gitmiş olmalıdır._\n\n' +
+                                    'Gerçekleşen Hata: ' + error + '\n\n'
+                                    , MessageType.text);
+                            } else {
+                                await conn.sendMessage(conn.user.jid, '*~_________~ 💙 Ayishumol ❤️ ~______~*' +
+                                    '\n*🌀 Entho Evideyo Oru Preshnam Ullath Pole Thonunnu' +
+                                    '\n\n*⚠️ ' + error + '*\n'
+                                    , MessageType.text);
+                            }
                         }
                     }
                 }
             }
         )
     });
-    
-    try {
+
+        try {
         await conn.connect();
     } catch {
         if (!nodb) {
@@ -442,4 +379,3 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
 }
 
 whatsAsena();
-
